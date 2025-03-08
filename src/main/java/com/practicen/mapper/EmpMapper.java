@@ -11,6 +11,12 @@ import java.util.List;
 @Mapper
 public interface EmpMapper {
 
+    public void update(Emp emp);
+
+    @Select("select id, username, password, name, gender, image, job, entrydate, dept_id, create_time, update_time "+
+            "from emp " + "where id = #{id}")
+    public Emp findById(Integer id);
+
     @Insert("insert into emp (username, name, gender, image, job, entrydate, dept_id, create_time, update_time)"
     + "values (#{username}, #{name},#{gender}, #{image}, #{job}, #{entrydate}, #{deptId}, #{createTime}, #{updateTime});")
     void insert(Emp emp);

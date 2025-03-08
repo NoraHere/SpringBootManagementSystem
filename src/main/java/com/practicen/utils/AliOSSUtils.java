@@ -6,6 +6,7 @@ import com.aliyun.oss.common.auth.EnvironmentVariableCredentialsProvider;
 import com.aliyun.oss.common.comm.SignVersion;
 import com.aliyun.oss.model.PutObjectRequest;
 import com.aliyun.oss.model.PutObjectResult;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,12 +18,15 @@ import java.util.UUID;
 
 @Component
 public class AliOSSUtils {
-    private String endpoint = "https://oss-ap-southeast-1.aliyuncs.com";
-    private String bucketName = "web-2538";
-    private String region = "ap-southeast-1";
+    @Value("${aliyun.oss.endpoint}")
+    private String endpoint;
+    @Value("${aliyun.oss.bucketName}")
+    private String bucketName;
+    @Value("${aliyun.oss.region}")
+    private String region;
 
     public String upload(MultipartFile file) throws IOException, com.aliyuncs.exceptions.ClientException {
-        InputStream inputStream = file.getInputStream();
+        InputStream inputStream = file.getInputStream(); //must be first
 
         String originalFilename = file.getOriginalFilename();
         String extname = originalFilename.substring(originalFilename.lastIndexOf(".")); //extension name

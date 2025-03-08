@@ -19,6 +19,18 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
+    @PutMapping
+    public Result update(@RequestBody Emp emp) {
+        empService.update(emp);
+        return Result.success();
+    }
+
+    @GetMapping("/{id}")
+    public Result getById(@PathVariable Integer id) {
+        Emp emp = empService.getById(id);
+        return Result.success(emp);
+    }
+
     @PostMapping
     public Result save(@RequestBody Emp emp) {
         log.info("save new employee: {}",emp);
