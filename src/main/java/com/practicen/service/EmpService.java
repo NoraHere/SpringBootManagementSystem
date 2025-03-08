@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface EmpService {
 
+    public Emp login(Emp emp);
+
     public void update(Emp emp);
 
     public Emp getById(Integer id);
