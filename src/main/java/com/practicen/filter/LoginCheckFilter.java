@@ -13,7 +13,7 @@ import org.springframework.util.StringUtils;
 import java.io.IOException;
 
 @Slf4j
-@WebFilter(urlPatterns = "/*")//path filter intercepted
+//@WebFilter(urlPatterns = "/*")//path filter intercepted
 public class LoginCheckFilter implements Filter {
 
     @Override
