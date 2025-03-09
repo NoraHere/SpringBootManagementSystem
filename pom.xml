@@ -110,6 +110,13 @@
             <version>0.9.1</version>
         </dependency>
 
+<!--        fastjson to make Result to json-type string-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.76</version>
+        </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>s3</artifactId>-->
