@@ -3,10 +3,7 @@ package com.practicen.filter;
 import com.alibaba.fastjson.JSONObject;
 import com.practicen.pojo.Result;
 import com.practicen.utils.JwtUtils;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,7 +14,7 @@ import java.io.IOException;
 
 @Slf4j
 @WebFilter(urlPatterns = "/*")//path filter intercepted
-public class LoginCheckFilter {
+public class LoginCheckFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
