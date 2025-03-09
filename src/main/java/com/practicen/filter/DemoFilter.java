@@ -5,7 +5,7 @@ import jakarta.servlet.annotation.WebFilter;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*")//path filter intercepted
+//@WebFilter(urlPatterns = "/*")//path filter intercepted
 public class DemoFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -14,8 +14,10 @@ public class DemoFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        System.out.println("DemoFilter doFilter");
+
+        System.out.println("DemoFilter preFilter");
         chain.doFilter(request,response);
+        System.out.println("DemoFilter postFilter");
     }
 
     @Override
