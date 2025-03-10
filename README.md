@@ -1,2 +1,2 @@
-# SpringBootPractice
-Build a framework using SpringBoot
+# SpringBoot Management System
+Designed and developed a scalable backend system using Spring Boot and Tomcat, implementing RESTful APIs for efficient organizational data management. Optimized database performance with MyBatis and MySQL, ensuring data integrity and query efficiency. Integrated JWT authentication with filters and interceptors for secure login, along with AliOSS cloud storage for seamless file management. Enhanced system reliability through comprehensive API testing with Postman and seamless integration with an Nginx-packaged frontend. Implemented transaction management and AOP-based logging for improved monitoring and maintainability.
