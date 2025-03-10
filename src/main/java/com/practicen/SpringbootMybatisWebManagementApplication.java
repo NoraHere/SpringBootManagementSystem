@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
-//@ServletComponentScan
+//@ServletComponentScan //和filter配合
 @SpringBootApplication
 public class SpringbootMybatisWebManagementApplication {
 

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
-//@Component // hand to IOC
+@Component // hand to IOC
 public class LoginCheckInterceptor implements HandlerInterceptor {
 
     //true 放行； false不放行

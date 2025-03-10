@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -41,10 +42,11 @@ public class DeptServiceImpl implements DeptService {
         try {
             deptMapper.delete(id); //根据ID删除部门数据
 
-            int i = 1/0;
+//            int i = 1/0; //验证log记录
             //if(true){throw new Exception("出错啦...");}
 
-            empMapper.delete(new ArrayList<>(id)); //根据部门ID删除该部门下的员工
+//            empMapper.delete(new ArrayList<>(id)); //根据部门ID删除该部门下的员工
+            empMapper.delete(Collections.singletonList(id)); // Ensure proper list conversion
         } finally {
             DeptLog deptLog = new DeptLog();
             deptLog.setCreateTime(LocalDateTime.now());
