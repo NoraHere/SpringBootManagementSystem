@@ -1,5 +1,6 @@
 package com.practicen.controller;
 
+import com.practicen.anno.Log;
 import com.practicen.pojo.Dept;
 import com.practicen.pojo.Result;
 import com.practicen.service.DeptService;
@@ -16,6 +17,7 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
+    @Log
     @PostMapping()
     public Result add(@RequestBody Dept dept) {
         log.info("add dept: {}", dept);
@@ -23,6 +25,7 @@ public class DeptController {
         return Result.success();
     }
 
+    @Log
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         log.info("delete dept id");

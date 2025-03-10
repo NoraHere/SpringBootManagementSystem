@@ -1,5 +1,6 @@
 package com.practicen.controller;
 
+import com.practicen.anno.Log;
 import com.practicen.pojo.Emp;
 import com.practicen.pojo.PageBean;
 import com.practicen.pojo.Result;
@@ -19,6 +20,7 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
+    @Log
     @PutMapping
     public Result update(@RequestBody Emp emp) {
         empService.update(emp);
@@ -31,6 +33,7 @@ public class EmpController {
         return Result.success(emp);
     }
 
+    @Log
     @PostMapping
     public Result save(@RequestBody Emp emp) {
         log.info("save new employee: {}",emp);
@@ -38,6 +41,7 @@ public class EmpController {
         return Result.success();
     }
 
+    @Log
     @DeleteMapping("/{ids}")
     public Result delete(@PathVariable List<Integer> ids) {
         empService.delete(ids);
