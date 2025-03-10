@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/management system
     username: root
-    password: Best2024ya!
+    password: 1234
   servlet:
     multipart:
       max-file-size: 10MB
